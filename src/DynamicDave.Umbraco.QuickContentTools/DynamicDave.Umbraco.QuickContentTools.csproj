@@ -13,6 +13,9 @@
     <Product>DynamicDave.Umbraco.QuickContentTools</Product>
     <Title>DynamicDave.Umbraco.QuickContentTools</Title>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/DynamicDave/DynamicDave.Umbraco.QuickContentTools</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DynamicDave/DynamicDave.Umbraco.QuickContentTools</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
 

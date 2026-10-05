@@ -1,6 +1,6 @@
 # DynamicDave.Umbraco.QuickContentTools
 
-Adds quick entity actions to documents (the actions menu in the content tree and workspace): copy URL, copy relative URL, copy content key (GUID), copy node ID, copy page title, copy backoffice URL, open frontend, and open frontend in a new tab.
+Adds quick entity actions to documents (the actions menu in the content tree and workspace): copy URL, copy relative URL, copy content key (GUID), copy node ID (the ID is shown in the menu label), copy page title, copy backoffice URL, and open frontend in a new tab.
 
 ## Install
 

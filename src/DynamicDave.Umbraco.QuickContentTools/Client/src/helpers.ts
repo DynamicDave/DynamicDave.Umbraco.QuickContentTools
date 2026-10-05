@@ -89,13 +89,20 @@ export async function getTitle(host: UmbControllerBase, unique: string): Promise
   return (variants.find((v) => sameCulture(v.culture, culture)) ?? variants[0])?.name;
 }
 
+// A node's integer id never changes, so the menu label and the copy action share one lookup per key.
+const nodeIdCache = new Map<string, number>();
+
 /** Looks up the legacy integer node id; throws when the API call fails (404 or error) so the caller shows "failed". */
 export async function getNodeId(unique: string): Promise<number | undefined> {
+  const cached = nodeIdCache.get(unique);
+  if (cached !== undefined) return cached;
   const response = await DocumentIdService.getDocumentId({ path: { key: unique } });
   if (response.error !== undefined && response.error !== null) {
     throw new Error('GetDocumentId failed');
   }
-  return (response.data as { id: number } | undefined)?.id;
+  const id = (response.data as { id: number } | undefined)?.id;
+  if (id !== undefined) nodeIdCache.set(unique, id);
+  return id;
 }
 
 export function getBackofficeUrl(unique: string): string {

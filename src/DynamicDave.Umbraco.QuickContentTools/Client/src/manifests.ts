@@ -1,12 +1,23 @@
+import type { ManifestEntityActionDefaultKind } from '@umbraco-cms/backoffice/entity-action';
+
 // Vite cannot bundle template-literal dynamic imports, so each action is imported with a literal path.
 type UmbEntityActionManifestApi = () => Promise<any>;
 
-const action = (alias: string, api: UmbEntityActionManifestApi, labelKey: string, icon: string, weight: number): UmbExtensionManifest => ({
+const action = (
+  alias: string,
+  api: UmbEntityActionManifestApi,
+  labelKey: string,
+  icon: string,
+  weight: number,
+  element?: ManifestEntityActionDefaultKind['element'],
+): ManifestEntityActionDefaultKind => ({
   type: 'entityAction',
   kind: 'default',
   alias: `DynamicDave.QuickContentTools.${alias}`,
   name: `Quick Content Tools: ${alias}`,
   api,
+  // Only set when given: an explicit `element: undefined` would override the default kind's element.
+  ...(element ? { element } : {}),
   forEntityTypes: ['document'],
   weight,
   conditions: [{ alias: 'Umb.Condition.EntityIsNotTrashed' }],
@@ -17,10 +28,12 @@ export const manifests: Array<UmbExtensionManifest> = [
   action('CopyUrl', () => import('./actions/copy-url.action.js'), 'copyUrl', 'icon-link', 900),
   action('CopyRelativeUrl', () => import('./actions/copy-relative-url.action.js'), 'copyRelativeUrl', 'icon-link', 890),
   action('CopyKey', () => import('./actions/copy-key.action.js'), 'copyKey', 'icon-fingerprint', 880),
-  action('CopyNodeId', () => import('./actions/copy-node-id.action.js'), 'copyNodeId', 'icon-binarycode', 870),
+  // Custom element so the label can show the id: "Copy node ID (1234)".
+  action('CopyNodeId', () => import('./actions/copy-node-id.action.js'), 'copyNodeId', 'icon-binarycode', 870, () =>
+    import('./actions/copy-node-id-action.element.js'),
+  ),
   action('CopyTitle', () => import('./actions/copy-title.action.js'), 'copyTitle', 'icon-font', 860),
   action('CopyBackofficeUrl', () => import('./actions/copy-backoffice-url.action.js'), 'copyBackofficeUrl', 'icon-window-popin', 850),
-  action('OpenFrontend', () => import('./actions/open-frontend.action.js'), 'openFrontend', 'icon-globe', 840),
   action('OpenFrontendNewTab', () => import('./actions/open-frontend-new-tab.action.js'), 'openFrontendNewTab', 'icon-out', 830),
   {
     type: 'localization',

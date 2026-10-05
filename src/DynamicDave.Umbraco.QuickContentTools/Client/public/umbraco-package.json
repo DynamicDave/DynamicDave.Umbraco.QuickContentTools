@@ -1,0 +1,14 @@
+{
+  "id": "DynamicDave.Umbraco.QuickContentTools",
+  "name": "DynamicDave.Umbraco.QuickContentTools",
+  "version": "0.0.0",
+  "allowTelemetry": true,
+  "extensions": [
+    {
+      "name": "Dynamic Dave Umbraco Quick Content Tools Bundle",
+      "alias": "DynamicDave.Umbraco.QuickContentTools.Bundle",
+      "type": "bundle",
+      "js": "/App_Plugins/DynamicDaveUmbracoQuickContentTools/dynamic-dave-umbraco-quick-content-tools.js"
+    }
+  ]
+}

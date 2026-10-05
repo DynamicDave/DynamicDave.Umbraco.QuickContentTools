@@ -6,7 +6,7 @@ Adds quick entity actions to documents (the actions menu in the content tree and
 
     dotnet add package DynamicDave.Umbraco.QuickContentTools
 
-Supported Umbraco version: **17.x** (net10.0). The backoffice UI is available in English, Dutch, German, French and Danish.
+Supported Umbraco version: **17.3 or later 17.x** (net10.0). Umbraco 18 is not supported by this version. The backoffice UI is available in English, Dutch, German, French and Danish.
 
 ## Configuration
 
@@ -14,7 +14,7 @@ None.
 
 ## Notes
 
-- The node ID endpoint requires Content-section access but does not check per-document (start-node) permissions.
+- The node ID endpoint requires Content-section access plus Browse access to the document (start nodes and user group permissions), the same check Umbraco uses for its own document endpoints.
 
 - The URL and title follow the culture of the backoffice app language.
 - When a page has no URL (for example because it is not published), the URL actions show a warning notification instead of copying.

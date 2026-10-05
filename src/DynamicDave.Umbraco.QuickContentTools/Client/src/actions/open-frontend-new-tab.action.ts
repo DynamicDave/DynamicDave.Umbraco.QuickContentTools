@@ -11,7 +11,7 @@ export class OpenFrontendNewTabAction extends UmbEntityActionBase<never> {
         await notify(this, 'warning', 'ddQuickTools_noUrl');
         return;
       }
-      window.open(url, '_blank', 'noopener');
+      window.open(url, '_blank', 'noopener,noreferrer');
     });
   }
 }

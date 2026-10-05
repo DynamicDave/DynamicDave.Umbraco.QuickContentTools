@@ -38,4 +38,28 @@ export const manifests: Array<UmbExtensionManifest> = [
     meta: { culture: 'nl' },
     js: () => import('./localization/nl.js'),
   },
+  {
+    type: 'localization',
+    alias: 'DynamicDave.QuickContentTools.Localization.De',
+    name: 'Quick Content Tools German',
+    weight: -100,
+    meta: { culture: 'de' },
+    js: () => import('./localization/de.js'),
+  },
+  {
+    type: 'localization',
+    alias: 'DynamicDave.QuickContentTools.Localization.Fr',
+    name: 'Quick Content Tools French',
+    weight: -100,
+    meta: { culture: 'fr' },
+    js: () => import('./localization/fr.js'),
+  },
+  {
+    type: 'localization',
+    alias: 'DynamicDave.QuickContentTools.Localization.Da',
+    name: 'Quick Content Tools Danish',
+    weight: -100,
+    meta: { culture: 'da' },
+    js: () => import('./localization/da.js'),
+  },
 ];

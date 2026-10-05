@@ -1,6 +1,6 @@
 # DynamicDave.Umbraco.QuickContentTools
 
-Copy and open actions (URL, relative URL, key, node ID, title, backoffice URL, open frontend) in the Umbraco content context menu.
+Copy and open actions (URL, relative URL, key, node ID, title, backoffice URL, open frontend in a new tab) in the Umbraco content context menu.
 
 The backoffice UI is localized in English, Dutch, German, French and Danish (`src/DynamicDave.Umbraco.QuickContentTools/Client/src/localization`).
 

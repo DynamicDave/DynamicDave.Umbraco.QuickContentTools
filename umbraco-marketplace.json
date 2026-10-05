@@ -1,0 +1,9 @@
+{
+  "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+  "Screenshots": [
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/DynamicDave/DynamicDave.Umbraco.QuickContentTools/main/docs/screenshots/quick-content-tools-actions.png",
+      "Caption": "Copy a content item's node ID, key and more with one click"
+    }
+  ]
+}

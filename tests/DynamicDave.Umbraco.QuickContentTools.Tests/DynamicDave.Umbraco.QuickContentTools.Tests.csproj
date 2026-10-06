@@ -5,6 +5,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
+    <!-- Resolves the package's minimum Umbraco version (17.0.0); its transitive advisories are covered by the
+         TestSite vulnerability check on the latest Umbraco 17, like the package project itself. -->
+    <NuGetAuditMode>direct</NuGetAuditMode>
   </PropertyGroup>
 
   <ItemGroup>

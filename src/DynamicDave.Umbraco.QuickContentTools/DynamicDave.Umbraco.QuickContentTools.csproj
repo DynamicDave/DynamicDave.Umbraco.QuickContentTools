@@ -16,11 +16,13 @@
     <PackageProjectUrl>https://github.com/DynamicDave/DynamicDave.Umbraco.QuickContentTools</PackageProjectUrl>
     <RepositoryUrl>https://github.com/DynamicDave/DynamicDave.Umbraco.QuickContentTools</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <!-- Built against the minimum supported Umbraco version: its transitive advisories are resolved by the
-         Umbraco version of the site that installs the package, so only audit direct dependencies here. -->
+    <PackageIcon>DynamicDave.package.logo.png</PackageIcon>
     <NuGetAuditMode>direct</NuGetAuditMode>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="DynamicDave.package.logo.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <!-- Central package management - no versions -->
   <ItemGroup>

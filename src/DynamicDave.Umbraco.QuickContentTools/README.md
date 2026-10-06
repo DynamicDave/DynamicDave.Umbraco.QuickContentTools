@@ -6,7 +6,7 @@ Adds quick entity actions to documents (the actions menu in the content tree and
 
     dotnet add package DynamicDave.Umbraco.QuickContentTools
 
-Supported Umbraco version: **17.3 or later 17.x** (net10.0). Umbraco 18 is not supported by this version. The backoffice UI is available in English, Dutch, German, French and Danish.
+Supported Umbraco versions: **17.x and 18.x** (net10.0), tested on 17.0.0 and 18.2.1. The backoffice UI is available in English, Dutch, German, French and Danish.
 
 ## Configuration
 

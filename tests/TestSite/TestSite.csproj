@@ -6,6 +6,13 @@
     <CompressionEnabled>false</CompressionEnabled> <!-- Disable compression. E.g. for umbraco backoffice files. These files should be precompressed by node and not let dotnet handle it -->
   </PropertyGroup>
 
+  <!-- UmbracoVersion comes from Directory.Packages.props. Umbraco 18 generates OpenAPI documents with
+       Microsoft.AspNetCore.OpenApi, whose source generator needs the interceptors namespace. -->
+  <PropertyGroup Condition="$(UmbracoVersion.StartsWith('18.'))">
+    <DefineConstants>$(DefineConstants);UMBRACO_18</DefineConstants>
+    <InterceptorsNamespaces>$(InterceptorsNamespaces);Microsoft.AspNetCore.OpenApi.Generated</InterceptorsNamespaces>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms" />
     <PackageReference Include="Umbraco.Cms.DevelopmentMode.Backoffice" />

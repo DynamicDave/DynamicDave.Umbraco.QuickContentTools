@@ -17,7 +17,6 @@ public class DocumentIdController(IIdKeyMap idKeyMap, IAuthorizationService auth
 {
     [HttpGet("document/{key:guid}/id", Name = "GetDocumentId")]
     [ProducesResponseType<DocumentIdModel>(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status403Forbidden)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetDocumentId(Guid key)
     {

@@ -1,12 +1,13 @@
 {
   "name": "dynamic-dave-umbraco-quick-content-tools",
   "private": true,
-  "version": "17.0.0",
+  "version": "18.0.0",
   "type": "module",
   "scripts": {
     "watch": "tsc && vite build --watch",
     "build": "tsc && vite build",
-    "generate-client": "node scripts/generate-openapi.js https://localhost:44413/umbraco/swagger/dynamicdave-quicktools/swagger.json"
+    "generate-client": "node scripts/generate-openapi.js https://localhost:44413/umbraco/swagger/dynamicdave-quicktools/swagger.json",
+    "generate-client:v18": "node scripts/generate-openapi.js https://localhost:44413/umbraco/openapi/dynamicdave-quicktools.json"
   },
   "devDependencies": {
     "@hey-api/openapi-ts": "^0.99.0",

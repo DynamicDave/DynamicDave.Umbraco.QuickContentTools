@@ -18,8 +18,17 @@ export const onInit: UmbEntryPointOnInit = async (host, _extensionRegistry) => {
     console.warn("UMB_AUTH_CONTEXT not available — extension API client will not be authenticated");
     return;
   }
-  authContext.configureClient(client);
-
+  // configureClient() exists from Umbraco 17.3; on 17.0–17.2 set up the client from the OpenAPI configuration.
+  if (typeof authContext.configureClient === "function") {
+    authContext.configureClient(client);
+    return;
+  }
+  const config = authContext.getOpenApiConfiguration();
+  client.setConfig({
+    baseUrl: config.base,
+    credentials: config.credentials,
+    auth: () => config.token(),
+  });
 };
 
 export const onUnload: UmbEntryPointOnUnload = (_host, _extensionRegistry) => {

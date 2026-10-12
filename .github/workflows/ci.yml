@@ -61,7 +61,7 @@ jobs:
       - name: Build against Umbraco 18
         run: |
           dotnet build src/${{ env.PACKAGE }} -c Release -p:SkipClientBuild=true "-p:UmbracoPackageVersion=18.*"
-          dotnet build tests/TestSite -c Release -p:SkipClientBuild=true "-p:UmbracoVersion=18.*"
+          dotnet build tests/TestSite -c Release -p:SkipClientBuild=true "-p:TestSiteUmbracoVersion=18.*"
 
       - uses: actions/upload-artifact@v4
         with:
